@@ -13,8 +13,8 @@ const routes: Routes = [
         path: 'login',
         loadChildren: './auth-modules/login/login.module#LoginModule',
         // canActivate: [NoAuthGuardService]
-    },
-    { path: '**', redirectTo: '' }
+    }
+
 ];
 
 @NgModule({
