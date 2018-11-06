@@ -1,0 +1,87 @@
+<div class="main-wrapper">
+  <div class="an-loader-container">
+    <img src="assets/img/loader.png" alt="">
+  </div>
+  <div class="an-page-content" style="background:url(assets/img/log_back.jpg); background-size:cover;">
+    <div class="an-flex-center-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="an-login-container">
+              <div class="back-to-home">
+                <h3 class="an-logo-heading text-center wow fadeInDown">
+                  <a class="an-logo-link" routerLink="/">
+                    <img src="assets/img/logo.png" width="50">
+                  </a>
+                </h3>
+              </div>
+              <div class="an-single-component with-shadow">
+                <div class="an-component-header">
+                  <h6>Login</h6>
+                  <div class="component-header-right">
+                    <p class="sign-up-link">Don't have account?
+                      <a routerLink="/signup">Sign Up</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="an-component-body">
+                  <!--<div class="an-social-login">
+                    <label>Login with</label>
+                    <a class="an-social-icon facebook" href="#"><i class="ion-social-facebook"></i></a>
+                    <a class="an-social-icon twitter" href="#"><i class="ion-social-twitter"></i></a>
+                    <a class="an-social-icon google-plus" href="#"><i class="ion-social-googleplus"></i></a>
+                    <a class="an-social-icon dribble" href="#"><i class="ion-social-dribbble"></i></a>
+                    <a class="an-social-icon github" href="#"><i class="ion-social-github"></i></a>
+                    <a class="an-social-icon instagram" href="#"><i class="ion-social-instagram"></i></a>
+                    <a class="an-social-icon yahoo" href="#"><i class="ion-social-yahoo"></i></a>
+                    <a class="an-social-icon linkedin" href="#"><i class="ion-social-linkedin"></i></a>
+                  </div>-->
+                  <form (ngSubmit)="login()">
+                    <div class="an-input-group">
+                      <div class="an-input-group-addon">
+                        <i class="ion-ios-email-outline"></i>
+                      </div>
+                      <input type="email" placeholder="Email" class="an-form-control" name="email" [(ngModel)]="user_credentials.email">
+                      <div class="error" style="text-align: right;">{{ error?.email }}</div>
+                    </div>
+                    <div class="an-input-group">
+                      <div class="an-input-group-addon">
+                        <i class="ion-key"></i>
+                      </div>
+                      <input type="password" placeholder="Password" class="an-form-control" name="password" [(ngModel)]="user_credentials.password">
+                      <div class="error" style="text-align: right;">{{ error?.password }}</div>
+                    </div>
+
+                    <div class="remembered-section">
+                      <span class="an-custom-checkbox">
+                        <input type="checkbox" id="check-1" name="remember_me" [(ngModel)]="remember_me">
+                        <label for="check-1">Remember me</label>
+                      </span>
+                      <a routerLink="/reset-password">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="an-btn an-btn-default fluid">Log In</button>
+                    <div class="error" style="text-align: center;">{{ error?.unknown }}</div>
+                  </form>
+
+                </div>
+                <!-- end .AN-COMPONENT-BODY -->
+              </div>
+              <!-- end .AN-SINGLE-COMPONENT -->
+            </div>
+            <!-- end an-login-container -->
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+    </div>
+    <!-- end an-flex-center-center -->
+  </div>
+  <!-- end .AN-PAGE-CONTENT -->
+  <!--<footer class="an-footer">
+    <p>COPYRIGHT 2017 © . ALL RIGHTS RESERVED</p>
+  </footer>-->
+  <!-- end an-footer -->
+
+</div>
+<!-- end .MAIN-WRAPPER -->

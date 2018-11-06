@@ -1,0 +1,78 @@
+<div class="main-wrapper">
+  <div class="an-loader-container">
+    <img src="../assets/img/loader.png" alt="">
+  </div>
+  <div class="an-page-content" style="background:url(../assets/img/log_back.jpg); background-size:cover;">
+    <div class="an-flex-center-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="an-login-container">
+              <div class="back-to-home">
+                <h3 class="an-logo-heading text-center wow fadeInDown">
+                  <a class="an-logo-link" routerLink="/"><img src="../assets/img/logo.png" width="50">
+                  </a>
+                </h3>
+              </div>
+              <div class="an-single-component with-shadow">
+                <div class="an-component-header">
+                  <h6>Sign Up</h6>
+                  <div class="component-header-right">
+                    <p class="sign-up-link">Already member? <a routerLink="/login">Log In</a></p>
+                  </div>
+                </div>
+                <div class="an-component-body">
+                  <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="an-input-group">
+                      <div class="an-input-group-addon"><i class="ion-person"></i></div>
+                      <input type="text" placeholder="First Name" class="an-form-control" formControlName="firstname">
+                    </div>
+                    <div class="an-input-group">
+                      <div class="an-input-group-addon"><i class="ion-person"></i></div>
+                      <input type="text" placeholder="Last Name" class="an-form-control" formControlName="lastname">
+                    </div>
+
+                    <div class="an-input-group">
+                      <div class="an-input-group-addon"><i class="ion-ios-email-outline"></i></div>
+                      <input type="email" placeholder="Email Address" class="an-form-control" formControlName="email"
+                        readonly>
+                    </div>
+                    <div class="an-input-group">
+                      <div class="an-input-group-addon"><i class="ion-key"></i></div>
+                      <input type="password" placeholder="Password" class="an-form-control" formControlName="password"
+                        [ngStyle]="{ 'margin-bottom': form.controls['password'].dirty && form.controls['password'].errors ? 0 : '20px' }">
+                      <div class="error text-right" *ngIf="form.controls['password'].dirty && form.controls['password'].errors">
+                        <span *ngIf="form.controls['password'].errors.minlength; else checkPattern">
+                          Password should contain at least 6 characters.
+                        </span>
+                        <ng-template #checkPattern>
+                          <span *ngIf="form.controls['password'].errors.pattern">
+                            Password should contain at least one letter and one number.
+                          </span>
+                        </ng-template>
+                      </div>
+                    </div>
+
+                    <div class="remembered-section no-flex">
+                      <span class="an-custom-radiobox">
+                        <input type="radio" formControlName="gender" id="radio-1" value="M">
+                        <label for="radio-1">Male</label>
+                      </span>
+                      <span class="an-custom-radiobox">
+                        <input type="radio" formControlName="gender" id="radio-2" value="F">
+                        <label for="radio-2">Female</label>
+                      </span>
+                    </div>
+                    <button type="submit" class="an-btn an-btn-default fluid" [disabled]="form.invalid">Sign Up</button>
+                    <div class="error text-center" *ngIf="form.invalid">Please fill all the fields.</div>
+                  </form>
+
+                </div> <!-- end .AN-COMPONENT-BODY -->
+              </div> <!-- end .AN-SINGLE-COMPONENT -->
+            </div> <!-- end an-login-container -->
+          </div>
+        </div> <!-- end row -->
+      </div>
+    </div>
+  </div>
+</div>
