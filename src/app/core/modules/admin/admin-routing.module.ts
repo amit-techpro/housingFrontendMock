@@ -4,11 +4,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: DashboardComponent
   },
   {
-    path: "/abc",
+    path: 'abc',
     component: ProfileComponent
   }
 ];

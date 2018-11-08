@@ -12,8 +12,10 @@ const routes: Routes = [
     {
         path: 'login',
         loadChildren: './auth-modules/login/login.module#LoginModule',
-        // canActivate: [NoAuthGuardService]
-    }
+        //canActivate: [NoAuthGuardService]
+    },
+    { path: '**', redirectTo: '' }
+
 
 ];
 
