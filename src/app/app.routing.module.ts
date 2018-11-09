@@ -6,13 +6,8 @@ import { NoAuthGuardService } from './services/route-guards/no-auth-guard/no-aut
 const routes: Routes = [
     {
         path: '',
-        loadChildren: './core/core.module#CoreModule'
+        loadChildren: './core/core.module#CoreModule',
         //canActivate: [AuthGuardService]
-    },
-    {
-        path: 'login',
-        loadChildren: './auth-modules/login/login.module#LoginModule',
-        //canActivate: [NoAuthGuardService]
     },
     { path: '**', redirectTo: '' }
 

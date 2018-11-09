@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService, UserType } from '../user/user.service';
+import { UserService } from '../user/user.service';
 import { Location } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';

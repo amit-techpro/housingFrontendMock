@@ -5,11 +5,12 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   },
   {
-    path: 'abc',
-    component: ProfileComponent
+    path: 'dashboard',
+    component: DashboardComponent
   }
 ];
 
