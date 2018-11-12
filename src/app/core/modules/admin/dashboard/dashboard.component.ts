@@ -9,7 +9,7 @@ import swal from 'sweetalert2';
 
 export class DashboardComponent implements OnInit {
 
-  public dashboardData = null;
+  dashboardData = [];
   constructor(
     private DashboardService: DashboardService,
   ) { }
@@ -23,9 +23,9 @@ export class DashboardComponent implements OnInit {
         if (err) {
           swal('Error!', 'Something went wrong. Please try again later.', 'error');
         } else {
-          this.dashboardData = {
-            ...res.data
-          };
+          this.dashboardData = res.data;
+
+          console.log(this.dashboardData);
         }
       }
     );
