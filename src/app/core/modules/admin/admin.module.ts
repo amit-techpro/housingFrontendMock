@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardService } from './services/dashboard.service';
+import { AreaSetupComponent } from './area-setup/area-setup.component';
+import { BranchComponent } from './branch/branch.component';
 
 
 @NgModule({
@@ -14,7 +16,7 @@ import { DashboardService } from './services/dashboard.service';
     AdminRoutingModule,
     SharedModule
   ],
-  declarations: [DashboardComponent, ProfileComponent],
+  declarations: [DashboardComponent, ProfileComponent, AreaSetupComponent, BranchComponent],
   providers: [
     DashboardService
   ]

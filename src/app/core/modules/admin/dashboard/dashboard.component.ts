@@ -24,8 +24,6 @@ export class DashboardComponent implements OnInit {
           swal('Error!', 'Something went wrong. Please try again later.', 'error');
         } else {
           this.dashboardData = res.data;
-
-          console.log(this.dashboardData);
         }
       }
     );

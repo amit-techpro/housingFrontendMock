@@ -7,7 +7,12 @@ const routes: Routes = [
     {
         path: '',
         loadChildren: './core/core.module#CoreModule',
-        //canActivate: [AuthGuardService]
+        canActivate: [AuthGuardService]
+    },
+    {
+        path: 'login',
+        loadChildren: './auth-modules/login/login.module#LoginModule',
+        canActivate: [NoAuthGuardService]
     },
     { path: '**', redirectTo: '' }
 

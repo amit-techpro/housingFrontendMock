@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './profile/profile.component';
+import { AreaSetupComponent } from './area-setup/area-setup.component';
+import { BranchComponent } from './branch/branch.component';
+
+BranchComponent
 const routes: Routes = [
   {
     path: '',
@@ -11,6 +14,14 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'area-setup',
+    component: AreaSetupComponent
+  },
+  {
+    path: 'branch',
+    component: BranchComponent
   }
 ];
 

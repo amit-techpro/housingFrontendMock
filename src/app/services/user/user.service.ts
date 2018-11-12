@@ -26,16 +26,11 @@ export class UserService {
           return;
         }
         this.ui.loader.show();
-        this.http.get('/auth/me').subscribe(
+        this.http.get('http://demo5533466.mockable.io/housing/login').subscribe(
           (res: any) => {
-            this.ui.loader.hide();
-            if (res.type != 2) {
-              obs.next(false);
-              localStorage.removeItem('access_token');
-            } else {
-              this.info = res;
-              obs.next(true);
-            }
+            //this.ui.loader.hide();
+            this.info = res;
+            obs.next(true);
           },
           err => {
             this.ui.loader.hide();
@@ -55,31 +50,26 @@ export class UserService {
     const payload = {
       ...user_credentials
     }
-    console.log(user_credentials);
-    this.http.post("http://demo5533466.mockable.io/housing/login", payload).subscribe(
+    this.http.post("http://www.housingapi.com/v1/users/login", payload).subscribe(
       (res: any) => {
-        console.log("suc");
+        console.log(res.dataset);
         localStorage.setItem('access_token', '1325522');
         callback(null)
       },
       err => {
-        console.log("err");
-
-        localStorage.setItem('access_token', '1325522');
-
         callback(err);
       }
     )
   }
 
   logout() {
-    this.http.post('/auth/logout', {}).subscribe(
+    console.log("logout");
+    this.http.get('http://demo5533466.mockable.io/housing/login', {}).subscribe(
       res => {
         this.info = null;
         localStorage.removeItem('access_token');
         this.router.navigate(['login']);
       },
-      console.log
     );
   }
 

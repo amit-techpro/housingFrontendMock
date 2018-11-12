@@ -13,12 +13,16 @@ import swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
 
   public user_credentials = {
-    username: '',
+    emailId: '',
     password: ''
   };
+
   public remember_me = false;
 
   public error = null;
+  private loaderStatus: boolean = false;
+
+
 
 
   constructor(
@@ -34,7 +38,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (!this.user_credentials.username) {
+    this.loaderStatus = true;
+    if (!this.user_credentials.emailId) {
       swal('Warning!', 'Email field is required.', 'warning');
       return;
     }
@@ -43,11 +48,13 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.user.login(this.user_credentials, (err) => {
-      this.ui.loader.hide();
+      //this.ui.loader.hide();
+      //  this.loaderStatus = true;
       if (err) {
+
         this.error = err;
-        if (Object.keys(err).length) {
-          swal('Error!', err[Object.keys(err)[0]], 'warning');
+        if (err.status == 401) {
+          swal('Error!', "Invalid Credentials", 'warning');
         }
       } else {
         if (this.remember_me) {
@@ -56,12 +63,10 @@ export class LoginComponent implements OnInit {
           localStorage.getItem('rem') && localStorage.removeItem('rem');
 
         }
+
         this.router.navigate(['']);
       }
     });
-
-    console.log("in login fn");
   }
-
 
 }
