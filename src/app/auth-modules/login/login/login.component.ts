@@ -18,9 +18,7 @@ export class LoginComponent implements OnInit {
   };
 
   public remember_me = false;
-
   public error = null;
-  private loaderStatus: boolean = false;
 
 
 
@@ -38,7 +36,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loaderStatus = true;
     if (!this.user_credentials.emailId) {
       swal('Warning!', 'Email field is required.', 'warning');
       return;
@@ -47,9 +44,9 @@ export class LoginComponent implements OnInit {
       swal('Warning!', 'Password field is required.', 'warning');
       return;
     }
+    this.ui.loader.show();
     this.user.login(this.user_credentials, (err) => {
-      //this.ui.loader.hide();
-      //  this.loaderStatus = true;
+      this.ui.loader.hide();
       if (err) {
 
         this.error = err;

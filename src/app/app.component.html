@@ -1,4 +1,6 @@
 <router-outlet></router-outlet>
-<div class="loaders loader" *ngIf="loaderStatus">
-    <img class="load img-responsive" src="assets/images/aptive-loader.gif">
-</div>
+<ng-container *ngIf="ui.loaderState">
+    <div class="loaders loader">
+        <img class="load img-responsive" src="assets/images/aptive-loader.gif">
+    </div>
+</ng-container>

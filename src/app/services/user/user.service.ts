@@ -28,7 +28,7 @@ export class UserService {
         this.ui.loader.show();
         this.http.get('http://demo5533466.mockable.io/housing/login').subscribe(
           (res: any) => {
-            //this.ui.loader.hide();
+            this.ui.loader.hide();
             this.info = res;
             obs.next(true);
           },
@@ -63,12 +63,12 @@ export class UserService {
   }
 
   logout() {
-    console.log("logout");
     this.http.get('http://demo5533466.mockable.io/housing/login', {}).subscribe(
       res => {
         this.info = null;
         localStorage.removeItem('access_token');
         this.router.navigate(['login']);
+
       },
     );
   }
